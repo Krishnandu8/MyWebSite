@@ -1,0 +1,21 @@
+name: Verify Email Step
+
+on:
+  workflow_dispatch: # Allows manual triggering from GitHub UI
+  push: # Triggers on push to any branch (you can specify branches if needed)
+    branches:
+      - main # Adjust if your primary branch is 'master'
+
+jobs:
+  check-email-name:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: 24ds2000075@ds.study.iitm.ac.in
+      run: |
+        echo "This step name contains the required email address."
+        echo "Workflow triggered by ${{ github.event_name }}."
+        echo "The current time is $(date)"
